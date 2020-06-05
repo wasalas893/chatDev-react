@@ -6,7 +6,6 @@ import "firebase/storage";
 
 
 
-
 var firebaseConfig = {
     apiKey: "AIzaSyCrikFEHbynKXsP92dPQt_KVo-KvJkvBh4",
     authDomain: "react-slack-clone-7c4ac.firebaseapp.com",

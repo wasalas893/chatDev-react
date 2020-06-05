@@ -28,6 +28,15 @@ class Register extends React.Component {
   event.preventDefault();
 
   firebase
+  .auth()
+  .createUserWithEmailAndPassword(this.state.email, this.state.password)
+  .then(createdUser => {
+    console.log(createdUser);
+  })
+  .catch(err => {
+    console.error(err);
+  });
+
    
 
   };
