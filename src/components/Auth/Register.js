@@ -113,7 +113,7 @@ saveUser=createdUser=>{
 
     name:createdUser.user.displayName,
     avatar:createdUser.user.photoURL
-    
+
   });
 
 };
@@ -135,8 +135,8 @@ saveUser=createdUser=>{
     return (
       <Grid textAlign="center" verticalAlign="middle" className="app">
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" icon color="orange" textAlign="center">
-            <Icon name="puzzle piece" color="orange" />
+          <Header as="h2" icon color="green" textAlign="center">
+            <Icon name="users" color="green" />
             Register for DevChat
           </Header>
           <Form onSubmit={this.handleSubmit} size="large" >
@@ -155,7 +155,7 @@ saveUser=createdUser=>{
               <Form.Input
                 fluid
                 name="email"
-                icon="mail"
+                icon="google plus square"
                 iconPosition="left"
                 placeholder="Email Address"
                 onChange={this.handleChange}
@@ -188,7 +188,7 @@ saveUser=createdUser=>{
                 type="password"
               />
 
-              <Button disabled={loading} className={loading ?"loading":""} color="orange" fluid size="large">
+              <Button disabled={loading} className={loading ?"loading":""} color="green" fluid size="large">
                 Submit
               </Button>
             </Segment>
