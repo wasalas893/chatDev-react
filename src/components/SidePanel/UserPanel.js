@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-import { Grid,Header,Icon, Dropdown } from 'semantic-ui-react';
+import { Grid,Header,Icon, Dropdown,Image } from 'semantic-ui-react';
 
 import firebase from '../../firebase';
 
@@ -41,7 +41,9 @@ handleSignout=()=>{
 
     render(){
         //log una user data gannna puluwen redux waling
-        console.log(this.props.currentUser);
+       // console.log(this.props.currentUser);
+
+       const { user }=this.state;
         return(
             <Grid style={{ background: '#4c3c4c'}}>
                 <Grid.Column>
@@ -52,14 +54,18 @@ handleSignout=()=>{
                         <Icon name="code"/>
                         <Header.Content>DevChat</Header.Content>
                     </Header>
-
-                    </Grid.Row>
-                   {/* User Dropdown*/}
+                    {/* User Dropdown*/}
                    <Header style={{ padding:'0.25em'}} as="h4" inverted>
                        <Dropdown trigger={
-                           <span>{this.state.user.displayName}</span>
+                           <span>
+                           <Image src={user.photoURL} spaced="right" avatar />
+                           {user.displayName}
+                           </span>
                        } options={this.DropdownOptions()} />
                    </Header>
+
+                    </Grid.Row>
+                   
 
                 </Grid.Column>
             </Grid>
