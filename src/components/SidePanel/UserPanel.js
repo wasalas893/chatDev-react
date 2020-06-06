@@ -1,15 +1,23 @@
 import React from 'react';
 
+
+
 import { Grid,Header,Icon, Dropdown } from 'semantic-ui-react';
 
 import firebase from '../../firebase';
 
 class UserPanel extends React.Component{
 
+    state={
+        user:this.props.currentUser
+    };
+
+    
+
     DropdownOptions=()=>[
         {   
             key:"user",
-            text:<span>signed in as<strong>User</strong></span>,
+            text:<span>signed in as<strong>{this.state.user.displayName}</strong></span>,
             disabled:true
         },
         {   
@@ -32,6 +40,8 @@ handleSignout=()=>{
 
 
     render(){
+        //log una user data gannna puluwen redux waling
+        console.log(this.props.currentUser);
         return(
             <Grid style={{ background: '#4c3c4c'}}>
                 <Grid.Column>
@@ -47,7 +57,7 @@ handleSignout=()=>{
                    {/* User Dropdown*/}
                    <Header style={{ padding:'0.25em'}} as="h4" inverted>
                        <Dropdown trigger={
-                           <span>User</span>
+                           <span>{this.state.user.displayName}</span>
                        } options={this.DropdownOptions()} />
                    </Header>
 
@@ -56,4 +66,6 @@ handleSignout=()=>{
         );
     }
 }
+
+
 export default UserPanel;
