@@ -25,6 +25,9 @@ body,
   right: 1em;
   z-index: 200;
 }
+.menu{
+  padding-bottom:2em ;
+}
 
 /* Message.js */
 .message__self {

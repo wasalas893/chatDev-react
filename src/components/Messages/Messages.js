@@ -88,16 +88,18 @@ class Messages extends React.Component {
         return acc;
       },[]);
       this.setState({ searchResults });
+      setTimeout(()=>this.setState({ searchLoading:false }),1000);
     }
 
   render() {
-    const { messagesRef, messages, channel, user,progressBar,numUniqueUsers,searchTerm,searchResults } = this.state;
+    const { messagesRef,searchLoading, messages, channel, user,progressBar,numUniqueUsers,searchTerm,searchResults } = this.state;
 
     return (
       <React.Fragment>
         <MessagesHeader channelName={this.displayChannelName(channel)}
         numUniqueUsers={numUniqueUsers}
-        handleSearchChange={this.handleSearchChange} />
+        handleSearchChange={this.handleSearchChange}
+        searchLoading={searchLoading} />
 
         <Segment>
           <Comment.Group className={progressBar ? 'messages__progress':
