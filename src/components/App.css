@@ -13,7 +13,7 @@ body,
 }
 .messages__progress {
   height: 58vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 /* MessageForm.js */
