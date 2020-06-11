@@ -68,6 +68,7 @@ class DirectMessages extends React.Component {
 
   render() {
     const { users } = this.state;
+    //create online and offline
 
     return (
       <Menu.Menu className="menu">
@@ -81,12 +82,14 @@ class DirectMessages extends React.Component {
           <Menu.Item
             key={user.uid}
             onClick={() => console.log(user)}
+             
             style={{ opacity: 0.7, fontStyle: "italic" }}
           >
             <Icon
               name="circle"
               color={this.isUserOnline(user) ? "green" : "red"}
             />
+            
            @ {user.name}
         
           </Menu.Item>
