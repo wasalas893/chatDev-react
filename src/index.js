@@ -28,7 +28,7 @@ class Root extends React.Component{
     componentDidMount(){
         firebase.auth().onAuthStateChanged(user=>{
             if(user){
-                console.log(user);
+               
 
                 //redux
                 this.props.setUser(user);
@@ -43,7 +43,7 @@ class Root extends React.Component{
     render(){
         
         return this.props.isLoading ?<Spinner />:(
-       
+       //router
         <Switch>
             <Route exact path="/" component={App} />
             <Route path="/login" component={Login} />
